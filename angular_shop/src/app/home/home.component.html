@@ -1,0 +1,117 @@
+<mat-drawer-container class="drawer-container" autosize>
+  <mat-drawer #drawer class="drawer-sidenav" mode="side">
+
+    <div class="div-logo">
+      <img class="img-logo"
+           [src]="appConfig.getAppLogo()"/>
+    </div>
+    <mat-card class="card-menu-button">
+      <mat-card-content>
+        <p>{{ appConfig.getAppOwner() }}</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" *ngIf="isUserAdmin()" (click)="onDashboard()">
+      <mat-card-content>
+        <p>Dashboard</p>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="card-menu-button" (click)="onLogOut()">
+      <mat-card-content>
+        <p>Logout</p>
+      </mat-card-content>
+    </mat-card>
+  </mat-drawer>
+
+  <div class="drawer-sidenav-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ appConfig.getAppName() }}</span>
+      <span class="example-spacer"></span>
+      <app-cart-button></app-cart-button>
+    </mat-toolbar>
+
+    <img class="img-banner"
+         src="https://aboutpcshop.com/image/cache/catalog/logo/pc%20shopLOGO-3508x2481.png"/>
+    <img class="img-banner"
+         src="https://i.ytimg.com/vi/bjvM3DJENbA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA3oTbJWZx60ips1FZpcmV187qn2g"/>
+    <img class="img-banner"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYx2zOJ65qDvOv1H_Lzn6yrC2FcxEad8JXpo3jdk4LOHWIPlebMeOpXnXdNZgi87qaux8&usqp=CAU"/>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Welcome to {{ appConfig.getAppName() }}</mat-card-title>
+      <mat-card-content>
+
+        <div class="div-text">
+          <p>
+            Buy Hardware - Customize Your PC with Powerful Components
+            <br><br>
+            In the world of computers, the internal parts that make up the system are known as hardware. These PC
+            components are always getting better and more powerful, with new options coming out each year.
+            You do not have to buy a whole new computer to enjoy better performance.
+            By upgrading the right hardware components, you can make your computer faster and more capable. Discover our
+            wide range of high-quality components and take your computer to the next level.
+
+            Finding and purchasing the perfect hardware is easy when you shop at our computeruniverse hardware store. We
+            offer a vast selection of the latest and most advanced hardware components available.
+            No matter if you need PC components for gaming, professional tasks, or general computing, our store has
+            everything you are looking for.
+
+            Whether you are a fan of ready-made PCs or want to build your dream computer yourself, our hardware store
+            has the right components for you.
+            From processors and graphics cards to memory modules, motherboards, power supplies, and more, we have
+            everything you need to tune up your computer and enjoy a new level of performance.
+          </p>
+          <img class="img-section"
+               src="https://eerna.com.bd/image/cache/catalog/Build-your-pc%20(1)-403x210.jpg"/>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="card-about-us">
+      <mat-card-title class="title-about-us">Remarkable Service</mat-card-title>
+      <mat-card-content>
+        <div class="div-text">
+          <img class="img-section" style="margin-left: 0px !important; margin-right: 16px"
+               src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSEESzLjVIRwuKPy3cwg3Ry9zXpkgdATnCg8MK_SQj7O1z1y3pn">
+
+          <p>
+            A seamless shopping experience is an integrated and smooth customer journey across different channels and
+            touchpoints, ensuring convenience and satisfaction.
+            Creating a seamless shopping experience involves leveraging technology to integrate various channels,
+            personalize the customer journey, and simplify processes.
+            By focusing on these elements, businesses can enhance customer satisfaction, foster loyalty, and ultimately
+            drive sales.
+
+            Secure Payment Options: Your security is our top priority. That's why we offer a range of secure payment
+            options to choose from, including credit/debit cards, PayPal, and more. Rest assured that your personal and
+            financial information is safe with us.
+            <br><br>
+            Fast and reliable shipping is essential for enhancing customer satisfaction and loyalty. By implementing
+            efficient logistics, offering diverse shipping options, and maintaining transparent communication,
+            businesses can ensure a positive shopping experience. Emulate industry leaders like Amazon, Walmart, and
+            Zappos to provide our customers with the quick and dependable delivery they expect and deserve.
+
+            Experience the future of shopping with fast, reliable shipping that gets your purchases to you when you need
+            them, without any hassle.
+
+            <br><br>
+            Start Shopping Now: Dive into our diverse collection and experience the convenience of online shopping like
+            never before. Whether you're treating yourself or searching for the perfect
+            gift, {{ appConfig.getAppName() }}
+            is
+            your ultimate destination for all things fabulous.
+            Experience shopping as it should be: simple, enjoyable, and tailored to you. With these advanced solutions,
+            say goodbye to the hassles and hello to a new era of effortless shopping. Happy shopping!
+          </p>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+    <app-list-products [isAdmin]="false"></app-list-products>
+  </div>
+
+</mat-drawer-container>
+
