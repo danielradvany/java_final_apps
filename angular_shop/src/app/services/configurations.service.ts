@@ -8,7 +8,7 @@ export class ConfigurationsService {
   private appName: string = 'PC Components Shop';
   private appOwner: string = 'Daniel Iuliu Radvanyi';
   private appLogo: string =
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkrjQSlb5tXlqAXGtie4aSkEt2C4Sl4-Gwkg&s';
+    'https://us.123rf.com/450wm/onep99/onep992107/onep99210700341/171453792-computer-technology-logo-icon-design-vector.jpg?ver=6';
 
   constructor() {}
 
